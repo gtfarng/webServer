@@ -1,0 +1,37 @@
+<html>
+    <h1>Computer</h1>
+   
+<ol>
+    <% computers.forEach((computer)=>{ %>
+    <li>) <%= computer %></li>
+    <% }); %>
+</ol>
+    
+<ul>
+        <% computers.map((computer) => { %> 
+            <li>
+               <%= computer %>
+               <img src="../image/<%=computer%>.jpg"> 
+            </li>
+         <% }); %> 
+    
+
+</ul>
+
+
+<table border=0>
+
+        <% computers.map((computer) => { %> 
+              <tr>
+                <td><%= computer %></td>  
+              <td><img src="https://f.ptcdn.info/244/035/000/1441687027-IMG0817res-o.jpg" width="60px"></td>
+            
+            </tr>
+        <% }); %> 
+        
+        </table>
+
+  
+
+
+</html>
