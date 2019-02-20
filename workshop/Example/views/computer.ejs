@@ -1,37 +1,60 @@
 <html>
-    <h1>Computer</h1>
-   
+<head>
+<style>
+
+.indent
+    { 
+      padding-left: 1.8em 
+      }
+</style>
+
+</head> 
+    
+<h1>Computer</h1>
+
 <ol>
-    <% computers.forEach((computer)=>{ %>
-    <li>) <%= computer %></li>
-    <% }); %>
+  <% computers.forEach((computer)=>{ %>
+  <li>) <%= computer %></li>
+  <% }); %>
 </ol>
-    
+
 <ul>
-        <% computers.map((computer) => { %> 
-            <li>
-               <%= computer %>
-               <img src="../image/<%=computer%>.jpg"> 
-            </li>
-         <% }); %> 
-    
+  <% computers.map((computer) => { %>
+  <li>
+    <%= computer %>
+    <img src="../image/<%=computer%>.jpg">
+  </li>
+  <% }); %>
+
 
 </ul>
 
 
+<ol>
+  <% computers.forEach((computer)=>{ %>
+  <li>) 
+  <tr>
+    <%= computer %>
+    <img class="indent" src="https://f.ptcdn.info/244/035/000/1441687027-IMG0817res-o.jpg" width="60px">
+  </tr>
+  </li>
+  <% }); %>
+</ol>
+
+
 <table border=0>
 
-        <% computers.map((computer) => { %> 
-              <tr>
-                <td><%= computer %></td>  
-              <td><img src="https://f.ptcdn.info/244/035/000/1441687027-IMG0817res-o.jpg" width="60px"></td>
-            
-            </tr>
-        <% }); %> 
-        
-        </table>
+  <% computers.map((computer) => { %>
+  <tr>
+    <td>1.<%= computer %></td>
+    <td><img src="https://f.ptcdn.info/244/035/000/1441687027-IMG0817res-o.jpg" width="60px"></td>
 
-  
+  </tr>
+  <% }); %>
+
+</table>
+
+
 
 
 </html>
