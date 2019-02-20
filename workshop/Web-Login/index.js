@@ -3,7 +3,15 @@ const app = express();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require("express-session");
-const { ensureAuthenticated } = require('./ensureAuth');
+
+ensureAuthenticated=(req, res, next)=> 
+{
+      if (req.isAuthenticated()) 
+      {
+        return next();
+      }
+      res.redirect('/');
+}
 
 const users =
 {
