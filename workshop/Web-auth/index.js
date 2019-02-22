@@ -93,7 +93,7 @@ app.get('/logout', (req, res) =>
     res.redirect('/');
 });
 
-app.get('/admin', ensureAuthenticated, (req, res) => {
+app.get('/admin', (req, res) => {
     res.render('admin')
 });
 
