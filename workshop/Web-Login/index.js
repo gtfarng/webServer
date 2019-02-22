@@ -1,8 +1,13 @@
-const express = require('express');
-const app = express();
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const session = require("express-session");
+var express = require('express');
+var bodyParser = require("body-parser");
+var session = require("express-session");
+var cookieParser = require('cookie-parser')
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+
+var app = express();
+var jsonParser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({ extended: true })
 
 ensureAuthenticated=(req, res, next)=> 
 {
@@ -33,12 +38,18 @@ userAuth = (usrs, uname, passw) =>
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use(session({
-    secret: 'keyboard cat',
-    cookie: { maxAge: 60000 },
+    cookieName: 'session',
+    secret: 'webauth',
+    duration: 30 * 60 * 1000,
+    activeDuration: 5 * 60 * 1000,
+    httpOnly: true,
+    secure: true,
+    ephemeral: true,
     resave: true,
-    saveUninitialized: true,
-}));
+    saveUninitialized: true
+  }));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -67,7 +78,7 @@ passport.deserializeUser( (username, done)=>
 
 app.get('/admin', (req, res)=>
 {
-    res.render('admin', {email: "gtfarng@gmail.com" , password: '240311'})
+    res.render('admin', {email:"gtfarng@gmail.com"})
  })
  
 app.get("/", (req, res) => 
