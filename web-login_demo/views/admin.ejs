@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>Web authentication</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<style>
+    body {
+        background-color: white;
+        align-items: center;
+    }
+
+    form {
+        margin-top: 20px;
+        margin-left: 350px;
+        margin-right: 350px;
+    }
+
+    label {
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <br>
+        <h1 align="center" style="text-decoration:underline">Web authentication</h1><br>
+    </div>
+
+    <div class="container" align="center">
+        <div class="card" align="center">
+            <div class="card-body">
+
+                <div>
+                    <form action="/" method="get"><br>
+                        <% admins.forEach((admin)=>
+                        { %>
+                        <h1 align="center"><small><%= admin %> <%= foo %></small></h1><br><br>
+                       
+                        <button class="btn btn-primary btn-lg btn-block" type="submit"><%= bt %></button>
+                        <% }); %>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

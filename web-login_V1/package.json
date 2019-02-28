@@ -1,0 +1,34 @@
+{
+  "name": "web_login",
+  "version": "1.0.0",
+  "description": "Create website login",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrbin42/web_login.git"
+  },
+  "keywords": [
+    "login",
+    "sessions",
+    "express",
+    "sessions"
+  ],
+  "author": "Adrienne Bing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrbin42/web_login/issues"
+  },
+  "homepage": "https://github.com/adrbin42/web_login#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "express-validator": "^3.2.0",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.4",
+    "path": "^0.12.7"
+  }
+}

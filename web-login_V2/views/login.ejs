@@ -1,0 +1,30 @@
+<html>
+        <style>
+                .block 
+                {
+                    border: 1px black;
+                    padding: 20px;
+                }
+        </style>
+        <% if(status){ %>
+            <div class="block">
+                    <form action="admin" method="POST">
+                            Email : <input type="text" name='email'/><br>
+                            Password :<input type="password" name='password'/><br>
+                            <button >Login</button>
+        
+                        </form>
+            </div>
+            
+        <%}else{%>
+            <div class="block">
+                    <form action="admin" method="POST">
+                            Email : <input type="text" name='email'/><br>
+                            Password :<input type="password" name='password'/><br>
+                            <button >Login</button>
+                            <h3>Wrong password</h3>
+                        </form>
+            </div>
+           
+        <%}%>
+  </html>
